@@ -47,7 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="condition.cs" />
+    <Compile Include="final_state.cs" />
+    <Compile Include="state.cs" />
     <Compile Include="condition_transition.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Form1.cs">
@@ -62,6 +63,7 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="initial_state.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
