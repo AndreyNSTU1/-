@@ -33,12 +33,12 @@ namespace Курсовая
             {
                 condition_transition transition = new condition_transition(Database.current_state, Database.transition_condition, Database.next_state);
                 Database.Transitions.Add(transition);
-                dataGridView1.Rows.Add(Database.Transitions[Database.Transitions.Count - 1].Current_condition, Database.Transitions[Database.Transitions.Count - 1].Transition_condition, Database.Transitions[Database.Transitions.Count - 1].Next_condition);
+                dataGridView1.Rows.Add(Database.Transitions[Database.Transitions.Count - 1].Current_state, Database.Transitions[Database.Transitions.Count - 1].Transition_condition, Database.Transitions[Database.Transitions.Count - 1].Next_state);
                 Database.current_state = null;
                 Database.next_state = null;
             }
             else
-                MessageBox.Show("Не выбрано начальное и конечное состояния,повторите попытку!");
+                MessageBox.Show("Не заданы все параметры перехода,повторите попытку!");
 
         }
 
@@ -56,9 +56,9 @@ namespace Курсовая
                     for (int j = 0; j< Database.Transitions.Count;j++)
                     {
                         txt = original_signal[i].ToString();
-                        if ((String.Compare(txt,Database.Transitions[j].Transition_condition)) == 0)
+                        if (String.Compare(txt,Database.Transitions[j].Transition_condition) == 0)
                         {
-                        Curent_state = Database.Transitions[j].Next_condition;
+                        Curent_state = Database.Transitions[j].Next_state;
                         err = false;
                         break;
                         }
@@ -77,7 +77,7 @@ namespace Курсовая
                 if (Curent_state != final_State.name_of_state)
                     MessageBox.Show("Автомат не пришёл в конечное состояние" + " " + "Текущее состояние автомата" + " " + Curent_state);
                 else
-                    MessageBox.Show("Автомат пришёл в конечное состояние" + "" + Curent_state);
+                    MessageBox.Show("Автомат пришёл в конечное состояние" + " " + Curent_state);
             }
             else
                 MessageBox.Show("Введите начальное и конечное состояния");

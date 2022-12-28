@@ -8,7 +8,7 @@ namespace Курсовая
 {
     public class state
     {
-        public string name_of_state { get; protected set; }
+        public string name_of_state;
 
         public state(string Name_of_state)
         {
